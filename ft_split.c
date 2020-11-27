@@ -1,0 +1,81 @@
+#include "libft.h"
+
+int		ft_countarrays(char const *s, char c)
+{
+	int	nb_arr;
+	int	i;
+
+	nb_arr = 1;
+	i = 0;
+	while (s[i] == c)
+		i++;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+		{
+			while (s[i] == c)
+				i++;
+			nb_arr++;
+		}
+		i++;
+	}
+	return (nb_arr);
+}
+
+char	*ft_mallocline(char *splitted, const char *s, int c)
+{
+	int	n;
+
+	n = 0;
+	while (s[n] != c && s[n] != '\0')
+		n++;
+	if (n != 0)
+	{
+		if (!(splitted = (char *)malloc(n + 1)))
+			return (NULL);
+		return (splitted);
+	}
+	return (NULL);
+}
+
+char	**ft_fill(char **splitted, const char *s, int i_max, int c)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < i_max && *s)
+	{
+		j = 0;
+		splitted[i] = ft_mallocline(splitted[i], s, c);
+		while (s[j] != c && s[j] != '\0')
+		{
+			splitted[i][j] = s[j];
+			j++;
+		}
+		if (j != 0)
+		{
+			splitted[i][j] = '\0';
+			i++;
+		}
+		while (s[j] == c)
+			j++;
+		s = s + j;
+	}
+	splitted[i] = NULL;
+	return (splitted);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**splitted;
+	int		i_max;
+
+	if (!s)
+		return (NULL);
+	i_max = ft_countarrays(s, c);
+	if (!(splitted = (char **)malloc(i_max * sizeof(char *) + 1)))
+		return (NULL);
+	ft_fill(splitted, s, i_max, c);
+	return (splitted);
+}

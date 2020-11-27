@@ -1,0 +1,20 @@
+#include "libft.h"
+
+int main()
+{
+	char src1[] = "12345";
+	char dst1[] = "1vavava";
+	char src2[] = "12345";
+	char dst2[] = "1vavava";
+	size_t size = 8;
+
+printf("sizeof DST = %lu\n", sizeof(dst1));
+
+	printf("%lu\n", strlcat(dst1, src1, size) );
+	printf("Apres strlcat : %s & %s\n", dst1, src1);
+	// remarque : abort si size > sizeof dst1
+
+	printf("mine : %lu\n", ft_strlcat(dst2, src2, size));
+	printf("Apres ft_strlcat : %s & %s\n", dst2, src2);
+	return 0;
+}

@@ -1,0 +1,17 @@
+#include "libft.h"
+
+int main()
+{
+	char src1[] = "n";
+	char dst1[] = "SALAM";
+	char src2[] = "n";
+	char dst2[] = "SALAM";
+	size_t size = 8;
+
+	printf("%lu\n", strlcpy(dst1, src1, size) );
+	printf("Apres strlcpy : %s & %s\n", dst1, src1);
+
+	printf("mine : %lu\n", ft_strlcpy(dst2, src2, size));
+	printf("Apres ft_strlcpy : %s & %s\n", dst2, src2);
+	return 0;
+}
