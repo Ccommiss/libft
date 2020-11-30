@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 15:57:45 by ccommiss          #+#    #+#             */
-/*   Updated: 2020/11/17 15:00:54 by ccommiss         ###   ########.fr       */
+/*   Created: 2020/11/30 14:36:01 by ccommiss          #+#    #+#             */
+/*   Updated: 2020/11/30 14:36:03 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int nbr)
+char	*ft_strncat(char *dest, const char *src, size_t n)
 {
-	if (nbr == 0)
-		ft_putchar('0');
-	if (nbr == INT_MIN)
+	size_t i;
+	size_t j;
+
+	i = 0;
+	j = 0;
+	while (dest[i] != '\0')
+		i++;
+	while (src[j] != '\0' && j < n)
 	{
-		ft_putchar('-');
-		ft_putstr("2147483648");
-		return ;
+		dest[i + j] = src[j];
+		j++;
 	}
-	if (nbr < 0)
-	{
-		ft_putchar('-');
-		ft_putnbr(nbr * -1);
-	}
-	if (nbr > 0)
-	{
-		if (nbr > 9)
-			ft_putnbr(nbr / 10);
-		ft_putchar(nbr % 10 + 48);
-	}
+	dest[i + j] = '\0';
+	return (dest);
 }

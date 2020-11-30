@@ -6,7 +6,7 @@
 #    By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/16 15:08:11 by ccommiss          #+#    #+#              #
-#    Updated: 2020/11/17 11:52:41 by ccommiss         ###   ########.fr        #
+#    Updated: 2020/11/30 14:55:39 by ccommiss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,13 +46,18 @@ SRCS = ft_isalnum.c \
 	ft_strjoin.c \
 	ft_strmapi.c \
 	ft_strtrim.c
-#a corriger
 
 CUSTOM = ft_mystrncmp.c \
 	ft_putstr.c \
 	ft_putnbr.c \
 	ft_putchar.c \
-
+	ft_swap_strings.c \
+	ft_swap_char.c \
+	ft_reverse.c \
+	ft_strncat.c \
+	ft_memdel.c \
+	ft_strncpy.c \
+	ft_strequ.c
 
 BONUS = ft_lstnew.c \
 	ft_lstadd_front.c \
@@ -65,30 +70,39 @@ BONUS = ft_lstnew.c \
 	ft_lstmap.c \
 
 FLAGS = -Wall -Werror -Wextra
-OBJS = $(SRCS:.c=.o) $(CUSTOM:.c=.o)
-OBJS_BONUS = $(BONUS:.c=.o)
+OBJS = $(SRCS:.c=.o)
+OBJS_BONUS = $(BONUS:.c=.o) $(CUSTOM:.c=.o)
 NORME = ~/.norminette/norminette.rb
-CC = clang -c -g $(FLAGS)
+CC = @clang -c -g $(FLAGS)
 
-all : $(NAME)
+all : message $(NAME)
+	@echo "Your $(NAME) is ready."
+
+message :
+	@echo "Your $(NAME) files are compiling..."
 
 $(NAME): $(SRCS) $(OBJS)
-	ar -cvq $(NAME) $(OBJS)
+	@ar -rc $(NAME) $(OBJS)
 
-bonus : $(BONUS) $(OBJS_BONUS)
-	ar -cvq $(NAME) $(OBJS_BONUS)
-	ranlib $(NAME)
+bonus : all $(BONUS) $(OBJS_BONUS)
+	@ar -rc $(NAME) $(OBJS_BONUS)
+	@ranlib $(NAME)
+	@echo "Your $(NAME) is ready, bonuses included."
 
 norme:
-	$(NORME) $(SRCS) $(BONUS)
+	@$(NORME) $(SRCS) $(BONUS)
 
 normebonus: norme
-	$(NORME) $(BONUS)
+	@$(NORME) $(BONUS)
 
 clean:
-	/bin/rm -f *.o
+	@rm -f *.o
+	@echo "Your .o files have been deleted."
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "Your $(NAME) have been deleted."
 
 re: fclean all
+
+.PHONY: all clean re norme bonus normebonus
