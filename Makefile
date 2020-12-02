@@ -6,7 +6,7 @@
 #    By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/16 15:08:11 by ccommiss          #+#    #+#              #
-#    Updated: 2020/11/30 14:55:39 by ccommiss         ###   ########.fr        #
+#    Updated: 2020/12/02 10:45:35 by ccommiss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,8 +70,8 @@ BONUS = ft_lstnew.c \
 	ft_lstmap.c \
 
 FLAGS = -Wall -Werror -Wextra
-OBJS = $(SRCS:.c=.o)
-OBJS_BONUS = $(BONUS:.c=.o) $(CUSTOM:.c=.o)
+OBJS = $(SRCS:.c=.o) $(CUSTOM:.c=.o)
+OBJS_BONUS = $(BONUS:.c=.o)
 NORME = ~/.norminette/norminette.rb
 CC = @clang -c -g $(FLAGS)
 
