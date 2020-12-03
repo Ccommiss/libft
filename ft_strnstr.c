@@ -6,28 +6,42 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 18:48:08 by ccommiss          #+#    #+#             */
-/*   Updated: 2020/11/27 18:48:08 by ccommiss         ###   ########.fr       */
+/*   Updated: 2020/12/03 22:14:03 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+int		ft_mystrncmp(const char *first, const char *second, size_t length)
 {
 	size_t i;
 
 	i = 0;
+	if ((first[0] == '\0' && second[0] == '\0') || length == 0)
+		return (0);
+	while (first[i] && second[i] && i < length - 1)
+		i++;
+	return ((unsigned char)first[i] - (unsigned char)second[i]);
+}
+
+char	*ft_strnstr(const char *big, const char *little, size_t len)
+{
+	size_t i;
+	size_t lit_size;
+
+	i = 0;
+	lit_size = ft_strlen(little);
 	if (*little == '\0')
 		return ((char *)big);
-	while (big[i] != '\0' && big[i])
+	while (i < len && big[i])
 	{
-		while (big[i] != little[0] && i < len)
+		while (big[i] != little[0] && big[i])
 			i++;
-		if (ft_mystrncmp((big + i), little, ft_strlen(little)) == 0
-		&& i + ft_strlen(little) <= len)
+		if (i + lit_size <= len
+		&& ft_mystrncmp((big + i), little, lit_size) == 0)
 			return ((char *)big + i);
-		else
-			return (NULL);
+		else if (big[i])
+			i++;
 	}
-	return (0);
+	return (NULL);
 }

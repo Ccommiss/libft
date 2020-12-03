@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 18:14:43 by ccommiss          #+#    #+#             */
-/*   Updated: 2020/11/17 18:46:53 by ccommiss         ###   ########.fr       */
+/*   Updated: 2020/12/03 22:12:35 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t i;
+	int len;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	while (s[i] != c && i <= ft_strlen(s))
-		i--;
-	if (s[i] == c)
-		return (char *)&s[i];
+	len = ft_strlen(s);
+	while (len >= 0)
+	{
+		if (s[len] == c)
+			return ((char *)&s[len]);
+		len--;
+	}
 	return (NULL);
 }

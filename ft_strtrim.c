@@ -6,18 +6,18 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 18:48:17 by ccommiss          #+#    #+#             */
-/*   Updated: 2020/11/27 18:48:17 by ccommiss         ###   ########.fr       */
+/*   Updated: 2020/12/03 22:11:46 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*exception(char *trimmed)
+char	*exception(char **trimmed)
 {
-	if (!(trimmed = (char *)malloc(1)))
+	if (!(*trimmed = (char *)malloc(1)))
 		return (NULL);
-	trimmed[0] = '\0';
-	return (trimmed);
+	*trimmed[0] = '\0';
+	return (*trimmed);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -29,16 +29,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1 || !set)
 		return (NULL);
-	e = ft_strlen(s1);
+	e = ft_strlen(s1) - 1;
 	s = 0;
 	i = 0;
 	trimmed = NULL;
-	while (ft_strrchr(set, s1[s]) != NULL)
+	while (s <= e && ft_strchr(set, s1[s]) != NULL)
 		s++;
-	while (ft_strrchr(set, s1[e]) != NULL)
+	while (e >= 0 && ft_strrchr(set, s1[e]) != NULL)
 		e--;
 	if (s1[0] == '\0' || (s > e))
-		return (exception(trimmed));
+		return (exception(&trimmed));
 	if (!(trimmed = (char *)malloc((e - s) * sizeof(char) + 2)))
 		return (NULL);
 	while (s <= e)
