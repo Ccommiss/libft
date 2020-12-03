@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 18:47:22 by ccommiss          #+#    #+#             */
-/*   Updated: 2020/12/03 22:09:05 by ccommiss         ###   ########.fr       */
+/*   Updated: 2020/12/03 22:45:31 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,13 @@ int		ft_countarrays(char const *s, char c)
 
 	nb_arr = 1;
 	i = 0;
-	while (s[i] && s[i] == c)
-		i++;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
-		{
-			while (s[i] && s[i] == c)
-				i++;
-			if (!s[i])
-				return (nb_arr);
-			else
-				nb_arr++;
-		}
-		if (s[i])
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i] && s[i] != c)
+			nb_arr++;
+		while (s[i] && s[i] != c)
 			i++;
 	}
 	return (nb_arr);
