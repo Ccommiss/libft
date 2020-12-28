@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 18:46:20 by ccommiss          #+#    #+#             */
-/*   Updated: 2020/11/27 18:46:20 by ccommiss         ###   ########.fr       */
+/*   Updated: 2020/12/28 11:47:26 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *elem;
+	t_list	*elem;
 
 	elem = NULL;
-	if (!(elem = (t_list *)malloc(sizeof(t_list))))
+	elem = (t_list *)malloc(sizeof(t_list));
+	if (!elem)
 		return (NULL);
 	elem->content = content;
 	elem->next = NULL;

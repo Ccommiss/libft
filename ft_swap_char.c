@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 14:33:12 by ccommiss          #+#    #+#             */
-/*   Updated: 2020/11/30 14:33:30 by ccommiss         ###   ########.fr       */
+/*   Updated: 2020/12/28 11:43:28 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_swap_char(char *one, char *two)
 {
-	char a;
+	char	a;
 
 	a = *one;
 	*one = *two;

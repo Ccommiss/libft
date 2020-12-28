@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 18:48:17 by ccommiss          #+#    #+#             */
-/*   Updated: 2020/12/03 22:11:46 by ccommiss         ###   ########.fr       */
+/*   Updated: 2020/12/28 11:37:35 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 char	*exception(char **trimmed)
 {
-	if (!(*trimmed = (char *)malloc(1)))
+	*trimmed = (char *)malloc(1);
+	if (!trimmed)
 		return (NULL);
 	*trimmed[0] = '\0';
 	return (*trimmed);
@@ -39,7 +40,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 		e--;
 	if (s1[0] == '\0' || (s > e))
 		return (exception(&trimmed));
-	if (!(trimmed = (char *)malloc((e - s) * sizeof(char) + 2)))
+	trimmed = (char *)malloc((e - s + 2) * sizeof(char));
+	if (!trimmed)
 		return (NULL);
 	while (s <= e)
 		trimmed[i++] = s1[s++];
