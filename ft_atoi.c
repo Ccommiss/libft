@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 18:45:16 by ccommiss          #+#    #+#             */
-/*   Updated: 2020/11/27 18:45:17 by ccommiss         ###   ########.fr       */
+/*   Updated: 2020/12/28 11:19:11 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int nbr;
-	int neg;
+	int	nbr;
+	int	neg;
 
 	nbr = 0;
 	neg = 0;
 	while (*nptr == ' ' || *nptr == '\t' || *nptr == '\r' || *nptr == '\v'
-	|| *nptr == '\f' || *nptr == '\n')
+		|| *nptr == '\f' || *nptr == '\n')
 		nptr++;
 	if (*nptr == '-' || *nptr == '+')
 	{

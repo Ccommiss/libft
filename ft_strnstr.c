@@ -6,15 +6,15 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 18:48:08 by ccommiss          #+#    #+#             */
-/*   Updated: 2020/12/03 22:14:03 by ccommiss         ###   ########.fr       */
+/*   Updated: 2020/12/28 11:34:12 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_mystrncmp(const char *first, const char *second, size_t length)
+int	ft_mystrncmp(const char *first, const char *second, size_t length)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if ((first[0] == '\0' && second[0] == '\0') || length == 0)
@@ -26,8 +26,8 @@ int		ft_mystrncmp(const char *first, const char *second, size_t length)
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t i;
-	size_t lit_size;
+	size_t	i;
+	size_t	lit_size;
 
 	i = 0;
 	lit_size = ft_strlen(little);
@@ -38,7 +38,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		while (big[i] != little[0] && big[i])
 			i++;
 		if (i + lit_size <= len
-		&& ft_mystrncmp((big + i), little, lit_size) == 0)
+			&& ft_mystrncmp((big + i), little, lit_size) == 0)
 			return ((char *)big + i);
 		else if (big[i])
 			i++;

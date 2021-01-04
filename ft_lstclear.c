@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 18:45:59 by ccommiss          #+#    #+#             */
-/*   Updated: 2020/11/27 18:45:59 by ccommiss         ###   ########.fr       */
+/*   Updated: 2020/12/28 11:46:54 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list **init;
-	t_list *tmp;
+	t_list	**init;
+	t_list	*tmp;
 
 	init = lst;
 	while ((*lst) != NULL)

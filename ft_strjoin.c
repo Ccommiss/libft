@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 18:47:32 by ccommiss          #+#    #+#             */
-/*   Updated: 2020/11/27 18:47:32 by ccommiss         ###   ########.fr       */
+/*   Updated: 2020/12/28 11:43:07 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	size1 = ft_strlen(s1);
 	size2 = ft_strlen(s2);
-	if (!(jointed = (char *)malloc((size1 + size2) * sizeof(char) + 1)))
+	jointed = (char *)malloc((size1 + size2) * sizeof(char) + 1);
+	if (!jointed)
 		return (NULL);
 	jointed = ft_memcpy(jointed, s1, size1);
 	jointed = jointed + size1;

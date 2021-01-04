@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 18:45:47 by ccommiss          #+#    #+#             */
-/*   Updated: 2020/11/27 18:45:47 by ccommiss         ###   ########.fr       */
+/*   Updated: 2020/12/28 11:46:40 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	t_list *curr;
+	t_list	*curr;
 
 	if (*alst == NULL)
 		*alst = new;

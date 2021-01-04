@@ -6,13 +6,13 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 18:47:22 by ccommiss          #+#    #+#             */
-/*   Updated: 2020/12/03 22:45:31 by ccommiss         ###   ########.fr       */
+/*   Updated: 2020/12/28 11:42:19 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_countarrays(char const *s, char c)
+int	ft_countarrays(char const *s, char c)
 {
 	int	nb_arr;
 	int	i;
@@ -40,7 +40,8 @@ char	*ft_mallocline(char *splitted, const char *s, int c)
 		n++;
 	if (n != 0)
 	{
-		if (!(splitted = (char *)malloc(n * sizeof(char) + 1)))
+		splitted = (char *)malloc(n * sizeof(char) + 1);
+		if (!splitted)
 			return (NULL);
 		return (splitted);
 	}
@@ -83,7 +84,8 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	i_max = ft_countarrays(s, c);
-	if (!(splitted = (char **)malloc((i_max + 1) * sizeof(char *))))
+	splitted = (char **)malloc((i_max + 1) * sizeof(char *));
+	if (!splitted)
 		return (NULL);
 	ft_fill(splitted, s, i_max, c);
 	return (splitted);

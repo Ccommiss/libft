@@ -6,7 +6,11 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 15:06:14 by ccommiss          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2020/12/30 14:59:41 by ccommiss         ###   ########.fr       */
+=======
+/*   Updated: 2020/12/28 11:50:21 by ccommiss         ###   ########.fr       */
+>>>>>>> af62a4abda4f1f05ad0ee45234b8505b687b231f
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +23,7 @@
 # include <string.h>
 # include <stdlib.h>
 
-typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;

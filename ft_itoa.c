@@ -6,15 +6,16 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 18:45:42 by ccommiss          #+#    #+#             */
-/*   Updated: 2020/12/30 12:44:26 by ccommiss         ###   ########.fr       */
+/*   Updated: 2021/01/04 20:39:25 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		size_nbr(int n)
+
+int	size_nbr(int n)
 {
-	int size;
+	int	size;
 
 	size = 0;
 	if (n < 0)
@@ -43,7 +44,8 @@ char	*ft_itoa(int n)
 	size = size_nbr(n);
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	if (!(nbr = (char *)malloc(size * sizeof(char) + 1)))
+	nbr = (char *)malloc(size * sizeof(char) + 1);
+	if (!nbr)
 		return (NULL);
 	nbr[size] = '\0';
 	if (n < 0)
