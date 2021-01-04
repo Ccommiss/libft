@@ -6,7 +6,7 @@
 #    By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/16 15:08:11 by ccommiss          #+#    #+#              #
-#    Updated: 2020/12/03 22:15:58 by ccommiss         ###   ########.fr        #
+#    Updated: 2020/12/30 14:59:59 by ccommiss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,7 +56,9 @@ CUSTOM = ft_putstr.c \
 	ft_strncat.c \
 	ft_memdel.c \
 	ft_strncpy.c \
-	ft_strequ.c
+	ft_strequ.c \
+	ft_itoa_base.c \
+	ft_strtoupper.c \
 
 BONUS = ft_lstnew.c \
 	ft_lstadd_front.c \
@@ -69,9 +71,9 @@ BONUS = ft_lstnew.c \
 	ft_lstmap.c \
 
 FLAGS = -Wall -Werror -Wextra
-OBJS = $(SRCS:.c=.o)
-OBJS_BONUS = $(BONUS:.c=.o) $(CUSTOM:.c=.o)
-NORME = ~/.norminette/norminette.rb
+OBJS = $(SRCS:.c=.o) $(CUSTOM:.c=.o) $(BONUS:.c=.o)
+OBJS_BONUS = $(BONUS:.c=.o)
+NORME = norminette
 CC = @clang -c -g $(FLAGS)
 
 all : message $(NAME)
@@ -82,11 +84,12 @@ message :
 
 $(NAME): $(SRCS) $(OBJS)
 	@ar -rc $(NAME) $(OBJS)
+	@ranlib $(NAME)
 
 bonus : all $(BONUS) $(OBJS_BONUS)
 	@ar -rc $(NAME) $(OBJS_BONUS)
 	@ranlib $(NAME)
-	@echo "Your $(NAME) is ready, bonuses included."
+	@echo "[ $(NAME) ] Your $(NAME) is ready, bonuses included."
 
 norme:
 	@$(NORME) $(SRCS) $(BONUS)
@@ -96,7 +99,7 @@ normebonus: norme
 
 clean:
 	@rm -f $(OBJS) $(OBJS_BONUS)
-	@echo "Your .o files have been deleted."
+	@echo "[ $(NAME) ] Your .o files have been deleted."
 
 fclean: clean
 	@rm -f $(NAME)

@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 15:06:14 by ccommiss          #+#    #+#             */
-/*   Updated: 2020/11/27 18:56:09 by ccommiss         ###   ########.fr       */
+/*   Updated: 2020/12/30 14:59:41 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int				ft_toupper(int c);
 */
 int				ft_atoi(const char *nptr);
 char			*ft_itoa(int n);
+char			*ft_itoa_base(int n, int base, int size);
 void			ft_putnbr(int nbr);
 void			ft_putnbr_fd(int n, int fd);
 
@@ -58,6 +59,7 @@ char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strnstr(const char *big, const char *little, size_t len);
 char			*ft_strdup(const char *s);
+char			*ft_strtoupper(char *str);
 
 /*
 **  <STR> :  functions  related  to strings not  belonging  to  libc
