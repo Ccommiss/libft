@@ -6,11 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 15:06:14 by ccommiss          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2020/12/30 14:59:41 by ccommiss         ###   ########.fr       */
-=======
 /*   Updated: 2020/12/28 11:50:21 by ccommiss         ###   ########.fr       */
->>>>>>> af62a4abda4f1f05ad0ee45234b8505b687b231f
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +44,7 @@ int				ft_toupper(int c);
 int				ft_atoi(const char *nptr);
 char			*ft_itoa(int n);
 char			*ft_itoa_base(int n, int base, int size);
+char			*ft_utoa(unsigned int n);
 void			ft_putnbr(int nbr);
 void			ft_putnbr_fd(int n, int fd);
 

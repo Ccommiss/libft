@@ -59,6 +59,7 @@ CUSTOM = ft_putstr.c \
 	ft_strequ.c \
 	ft_itoa_base.c \
 	ft_strtoupper.c \
+	ft_utoa.c
 
 BONUS = ft_lstnew.c \
 	ft_lstadd_front.c \
