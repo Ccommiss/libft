@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 15:06:14 by ccommiss          #+#    #+#             */
-/*   Updated: 2020/12/28 11:50:21 by ccommiss         ###   ########.fr       */
+/*   Updated: 2021/01/07 08:07:23 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int				ft_toupper(int c);
 */
 int				ft_atoi(const char *nptr);
 char			*ft_itoa(int n);
-char			*ft_itoa_base(int n, int base, int size);
+char			*ft_itoa_base(long unsigned n, int base);
 char			*ft_utoa(unsigned int n);
 void			ft_putnbr(int nbr);
 void			ft_putnbr_fd(int n, int fd);
