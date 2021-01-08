@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/06 09:20:39 by ccommiss          #+#    #+#             */
-/*   Updated: 2021/01/07 13:31:14 by ccommiss         ###   ########.fr       */
+/*   Updated: 2021/01/08 17:34:08 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	size_nbr(unsigned int n)
 	return (size);
 }
 
-char	*ft_utoa(unsigned int n)
+char		*ft_utoa(unsigned int n)
 {
 	char	*nbr;
 	int		size;

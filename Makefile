@@ -77,11 +77,39 @@ OBJS_BONUS = $(BONUS:.c=.o)
 NORME = norminette
 CC = @clang -c -g $(FLAGS)
 
+
+# This is a minimal set of ANSI/VT100 color codes
+_END=$'\x1b[0m
+_BOLD=$'\x1b[1m
+_UNDER=$'\x1b[4m
+_REV=$'\x1b[7m
+_LIGHT=$'\x1b[2m
+
+# Colors
+_GREY=$'\x1b[30m
+_RED=$'\x1b[31m
+_GREEN=$'\x1b[32m
+_YELLOW=$'\x1b[33m
+_BLUE=$'\x1b[34m
+_PURPLE=$'\x1b[35m
+_CYAN=$'\x1b[36m
+_WHITE=$'\x1b[37m
+_LBLUE=$'\x1b[94m
+_ORANGE=$'\x1b[38;5;215m
+_PINK=$'\x1b[38;5;95m
+_GRASS=$'\x1b[38;5;119m
+_UNICORN= $'\360\237\246\204 
+_UNIC=$'🦄
+_LETTER = $'💌 
+
+WP = `pwd | sed 's!.*/!!'`
+
+
 all : message $(NAME)
-	@printf "%-30s %s\n" [$(NAME)] "Your $(NAME) is ready."
+	@printf "$(_BOLD)$(_PINK)%-30s$(_END) $(_GRASS)$(_BOLD)%s$(_END)\n" [$(WP)] "✅	Your $(NAME) is ready."
 
 message :
-	@printf "%-30s %s\n" [$(NAME)] "Your $(NAME) files are compiling..."
+	@printf "$(_BOLD)$(_PINK)%-30s$(_END) $(_WHITE)$(_LIGHT)%s$(_END)\n" [$(WP)] "Your $(NAME) files are compiling..."
 
 $(NAME): $(SRCS) $(OBJS)
 	@ar -rc $(NAME) $(OBJS)
@@ -90,7 +118,7 @@ $(NAME): $(SRCS) $(OBJS)
 bonus : all $(BONUS) $(OBJS_BONUS)
 	@ar -rc $(NAME) $(OBJS_BONUS)
 	@ranlib $(NAME)
-	@printf "%-30s %s\n" [$(NAME)] "Your $(NAME) is ready, bonuses included."
+	@printf "$(_BOLD)$(_PINK)%-30s$(_END) %s\n" [$(NAME)] "Your $(NAME) is ready, bonuses included."
 
 norme:
 	@$(NORME) $(SRCS) $(BONUS)
@@ -100,11 +128,11 @@ normebonus: norme
 
 clean:
 	@rm -f $(OBJS) $(OBJS_BONUS)
-	@printf "%-30s %s\n" [$(NAME)] "Your .o files have been deleted."
+	@printf "$(_BOLD)$(_PINK)%-30s$(_END) $(_LIGHT)%s\n$(_END)" [$(WP)] "Your .o files have been deleted."
 
 fclean: clean
 	@rm -f $(NAME)
-	@printf "%-30s %s\n" [$(NAME)] "Your $(NAME) have been deleted."
+	@printf "$(_BOLD)$(_PINK)%-30s$(_END) $(_BOLD)%s\n$(_END)" [$(WP)] "🗑️	Your $(NAME) have been deleted. "
 
 re: fclean all
 

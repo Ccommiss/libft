@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 18:45:42 by ccommiss          #+#    #+#             */
-/*   Updated: 2021/01/07 13:30:05 by ccommiss         ###   ########.fr       */
+/*   Updated: 2021/01/08 17:35:40 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static char	*def_base(int base)
 	return (def);
 }
 
-char	*ft_itoa_base(long unsigned n, int base)
+char		*ft_itoa_base(long unsigned n, int base)
 {
 	char			*nbr;
 	unsigned long	nbis;
