@@ -6,7 +6,7 @@
 #    By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/16 15:08:11 by ccommiss          #+#    #+#              #
-#    Updated: 2020/12/30 14:59:59 by ccommiss         ###   ########.fr        #
+#    Updated: 2021/01/07 22:04:52 by ccommiss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,10 +78,10 @@ NORME = norminette
 CC = @clang -c -g $(FLAGS)
 
 all : message $(NAME)
-	@echo "Your $(NAME) is ready."
+	@printf "%-30s %s\n" [$(NAME)] "Your $(NAME) is ready."
 
 message :
-	@echo "Your $(NAME) files are compiling..."
+	@printf "%-30s %s\n" [$(NAME)] "Your $(NAME) files are compiling..."
 
 $(NAME): $(SRCS) $(OBJS)
 	@ar -rc $(NAME) $(OBJS)
@@ -90,7 +90,7 @@ $(NAME): $(SRCS) $(OBJS)
 bonus : all $(BONUS) $(OBJS_BONUS)
 	@ar -rc $(NAME) $(OBJS_BONUS)
 	@ranlib $(NAME)
-	@echo "[ $(NAME) ] Your $(NAME) is ready, bonuses included."
+	@printf "%-30s %s\n" [$(NAME)] "Your $(NAME) is ready, bonuses included."
 
 norme:
 	@$(NORME) $(SRCS) $(BONUS)
@@ -100,11 +100,11 @@ normebonus: norme
 
 clean:
 	@rm -f $(OBJS) $(OBJS_BONUS)
-	@echo "[ $(NAME) ] Your .o files have been deleted."
+	@printf "%-30s %s\n" [$(NAME)] "Your .o files have been deleted."
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "Your $(NAME) have been deleted."
+	@printf "%-30s %s\n" [$(NAME)] "Your $(NAME) have been deleted."
 
 re: fclean all
 

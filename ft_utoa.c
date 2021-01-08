@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/06 09:20:39 by ccommiss          #+#    #+#             */
-/*   Updated: 2021/01/06 09:20:44 by ccommiss         ###   ########.fr       */
+/*   Updated: 2021/01/07 13:31:14 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,7 @@ char	*ft_utoa(unsigned int n)
 {
 	char	*nbr;
 	int		size;
-	unsigned		nbis;
 
-	nbis = n;
 	nbr = NULL;
 	size = size_nbr(n);
 	nbr = (char *)malloc(size * sizeof(char) + 1);

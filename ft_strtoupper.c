@@ -1,8 +1,8 @@
 #include "libft.h"
 
-char *ft_strtoupper(char *str)
+char	*ft_strtoupper(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')

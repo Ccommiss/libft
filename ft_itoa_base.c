@@ -6,20 +6,19 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 18:45:42 by ccommiss          #+#    #+#             */
-/*   Updated: 2021/01/07 08:35:52 by ccommiss         ###   ########.fr       */
+/*   Updated: 2021/01/07 13:30:05 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		size_nbr(long unsigned n, int base)
+static int	size_nbr(long unsigned n, int base)
 {
-	int size;
-	long unsigned nbis;
+	int				size;
+	long unsigned	nbis;
 
 	size = 0;
 	nbis = n;
-
 	if (nbis < 0)
 	{
 		size++;
@@ -35,13 +34,13 @@ static int		size_nbr(long unsigned n, int base)
 	return (size);
 }
 
-static char 	*def_base(int base)
+static char	*def_base(int base)
 {
-	char *def;
+	char	*def;
 
 	def = (char *)malloc(sizeof(char) * base + 1);
 	if (!def)
-		return(NULL);
+		return (NULL);
 	if (base == 16)
 		def = "0123456789abcdef";
 	else if (base == 10)
@@ -51,28 +50,25 @@ static char 	*def_base(int base)
 
 char	*ft_itoa_base(long unsigned n, int base)
 {
-	char	*nbr;
-	unsigned long		nbis;
-	char	*tab;
-	int size;
+	char			*nbr;
+	unsigned long	nbis;
+	char			*tab;
+	int				size;
 
 	nbis = n;
 	nbr = NULL;
-
 	size = size_nbr(nbis, base);
 	tab = def_base(base);
-
-
 	if (n == 0)
 		return (ft_strdup("0"));
-	if (!(nbr = (char *)malloc(size * sizeof(char) + 1)))
+	nbr = (char *)malloc(size * sizeof(char) + 1);
+	if (!nbr)
 		return (NULL);
 	nbr[size] = '\0';
 	if (n < 0)
 		n = -n;
 	while (nbis > 0)
 	{
-
 		nbr[size - 1] = tab[nbis % base];
 		nbis = nbis / base;
 		size--;
