@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 12:12:12 by ccommiss          #+#    #+#             */
-/*   Updated: 2020/11/17 12:23:01 by ccommiss         ###   ########.fr       */
+/*   Updated: 2021/03/06 11:11:39 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ size_t	ft_strlen(const char *s)
 	size_t	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	if (!s)
+		return (0);
+	while (s[i])
 		i++;
 	return (i);
 }

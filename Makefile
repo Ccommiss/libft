@@ -6,7 +6,7 @@
 #    By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/16 15:08:11 by ccommiss          #+#    #+#              #
-#    Updated: 2021/01/07 22:04:52 by ccommiss         ###   ########.fr        #
+#    Updated: 2021/03/06 10:43:37 by ccommiss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,8 @@ CUSTOM = ft_putstr.c \
 	ft_strequ.c \
 	ft_itoa_base.c \
 	ft_strtoupper.c \
-	ft_utoa.c
+	ft_utoa.c \
+	ft_ftoa.c
 
 BONUS = ft_lstnew.c \
 	ft_lstadd_front.c \
@@ -70,6 +71,8 @@ BONUS = ft_lstnew.c \
 	ft_lstclear.c \
 	ft_lstiter.c \
 	ft_lstmap.c \
+	get_next_line.c \
+	get_next_line_utils.c
 
 FLAGS = -Wall -Werror -Wextra
 OBJS = $(SRCS:.c=.o) $(CUSTOM:.c=.o) $(BONUS:.c=.o)

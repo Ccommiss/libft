@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 15:06:14 by ccommiss          #+#    #+#             */
-/*   Updated: 2021/01/08 17:47:34 by ccommiss         ###   ########.fr       */
+/*   Updated: 2021/03/06 10:48:40 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <limits.h>
 # include <string.h>
 # include <stdlib.h>
+# include <math.h> 
+# include "get_next_line.h"
+
 
 typedef struct	s_list
 {
@@ -45,6 +48,7 @@ int				ft_atoi(const char *nptr);
 char			*ft_itoa(int n);
 char			*ft_itoa_base(long unsigned n, int base);
 char			*ft_utoa(unsigned int n);
+char			*ft_ftoa(float n, int afterpoint);
 void			ft_putnbr(int nbr);
 void			ft_putnbr_fd(int n, int fd);
 
