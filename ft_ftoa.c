@@ -11,11 +11,14 @@ char	*ft_ftoa(float n, int afterpoint)
     // convert integer part to string 
     char *res = ft_itoa(ipart); 
     char *res2 = NULL;
+    char *tmp;
   
     // check for display option after point 
     if (afterpoint != 0) 
     { 
+        tmp = res;
         res = ft_strjoin(res, "."); 
+        free(tmp);
         // Get the value of fraction part upto given no. 
         // of points after dot. The third parameter  
         // is needed to handle cases like 233.007 
