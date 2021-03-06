@@ -23,5 +23,7 @@ char	*ft_ftoa(float n, int afterpoint)
         res2 = ft_itoa((int)fpart); 
     } 
     char *final = ft_strjoin(res, res2);
+    free(res);
+    free(res2);
     return (final);
 }
