@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 15:06:14 by ccommiss          #+#    #+#             */
-/*   Updated: 2021/03/06 16:08:58 by ccommiss         ###   ########.fr       */
+/*   Updated: 2021/03/15 15:24:32 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,5 +118,6 @@ char			*ft_reverse(char *str);
 void			ft_putendl(char const *s);
 int				ft_strequ(char const *s1, char const *s2);
 int				ft_isempty(char *str);
+void			ft_free_double_tab(char **tab);
 
 #endif
