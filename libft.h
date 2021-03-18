@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 15:06:14 by ccommiss          #+#    #+#             */
-/*   Updated: 2021/03/06 16:08:58 by ccommiss         ###   ########.fr       */
+/*   Updated: 2021/03/17 18:06:01 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <limits.h>
 # include <string.h>
 # include <stdlib.h>
-# include <math.h> 
+# include <math.h>
 # include "get_next_line.h"
 
 
@@ -118,5 +118,7 @@ char			*ft_reverse(char *str);
 void			ft_putendl(char const *s);
 int				ft_strequ(char const *s1, char const *s2);
 int				ft_isempty(char *str);
+void			ft_free_double_tab(char **tab);
+int				ft_is_in_str(const char *s, int c);
 
 #endif

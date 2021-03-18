@@ -6,7 +6,7 @@
 #    By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/16 15:08:11 by ccommiss          #+#    #+#              #
-#    Updated: 2021/03/06 16:11:07 by ccommiss         ###   ########.fr        #
+#    Updated: 2021/03/17 18:06:29 by ccommiss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,8 @@ CUSTOM = ft_putstr.c \
 	ft_strtoupper.c \
 	ft_utoa.c \
 	ft_ftoa.c \
-	ft_isempty.c
+	ft_isempty.c \
+	ft_free_double_tab.c
 
 BONUS = ft_lstnew.c \
 	ft_lstadd_front.c \
@@ -73,7 +74,8 @@ BONUS = ft_lstnew.c \
 	ft_lstiter.c \
 	ft_lstmap.c \
 	get_next_line.c \
-	get_next_line_utils.c
+	get_next_line_utils.c \
+	ft_is_in_str.c
 
 FLAGS = -Wall -Werror -Wextra
 OBJS = $(SRCS:.c=.o) $(CUSTOM:.c=.o) $(BONUS:.c=.o)
@@ -102,9 +104,9 @@ _LBLUE=$'\x1b[94m
 _ORANGE=$'\x1b[38;5;215m
 _PINK=$'\x1b[38;5;95m
 _GRASS=$'\x1b[38;5;119m
-_UNICORN= $'\360\237\246\204 
+_UNICORN= $'\360\237\246\204
 _UNIC=$'🦄
-_LETTER = $'💌 
+_LETTER = $'💌
 
 WP = `pwd | sed 's!.*/!!'`
 
