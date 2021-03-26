@@ -1,32 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ftoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/26 15:46:53 by ccommiss          #+#    #+#             */
+/*   Updated: 2021/03/26 15:51:53 by ccommiss         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_ftoa(float n, int afterpoint)
 {
-    // Extract integer part 
-    int ipart = (int)n; 
-  
-    // Extract floating part 
-    float fpart = n - (float)ipart; 
-  
-    // convert integer part to string 
-    char *res = ft_itoa(ipart); 
-    char *res2 = NULL;
-    char *tmp;
-  
-    // check for display option after point 
-    if (afterpoint != 0) 
-    { 
-        tmp = res;
-        res = ft_strjoin(res, "."); 
-        free(tmp);
-        // Get the value of fraction part upto given no. 
-        // of points after dot. The third parameter  
-        // is needed to handle cases like 233.007 
-        fpart = fpart * pow(10, afterpoint); 
-        res2 = ft_itoa((int)fpart); 
-    } 
-    char *final = ft_strjoin(res, res2);
-    free(res);
-    free(res2);
-    return (final);
+	int		ipart;
+	float	fpart;
+	char	*res;
+	char	*res2;
+	char	*tmp;
+
+	ipart = (int)n;
+	fpart = n - (float)ipart;
+	*res = ft_itoa(ipart);
+	*res2 = NULL;
+	if (afterpoint != 0)
+	{
+		tmp = res;
+		res = ft_strjoin(res, ".");
+		free(tmp);
+		fpart = fpart * pow(10, afterpoint);
+		res2 = ft_itoa((int)fpart);
+	}
+	free(res);
+	free(res2);
+	return (ft_strjoin(res, res2));
 }
