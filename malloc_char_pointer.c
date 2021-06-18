@@ -1,38 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ftoa.c                                          :+:      :+:    :+:   */
+/*   malloc_char_pointer.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/26 15:46:53 by ccommiss          #+#    #+#             */
-/*   Updated: 2021/06/18 11:46:33 by ccommiss         ###   ########.fr       */
+/*   Created: 2021/06/18 15:23:55 by ccommiss          #+#    #+#             */
+/*   Updated: 2021/06/18 15:42:45 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_ftoa(float n, int afterpoint)
+int	ft_malloc_char_pointer(int size, char **ptr)
 {
-	int		ipart;
-	float	fpart;
-	char	*res;
-	char	*res2;
-	char	*tmp;
-
-	ipart = (int)n;
-	fpart = n - (float)ipart;
-	res = ft_itoa(ipart);
-	res2 = NULL;
-	if (afterpoint != 0)
-	{
-		tmp = res;
-		res = ft_strjoin(res, ".");
-		free(tmp);
-		fpart = fpart * pow(10, afterpoint);
-		res2 = ft_itoa((int)fpart);
-	}
-	free(res);
-	free(res2);
-	return (ft_strjoin(res, res2));
+	*ptr = (char *)malloc(sizeof(char) * size);
+	if (!*ptr)
+		return (0);
+	return (1);
 }

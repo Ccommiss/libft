@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ftoa.c                                          :+:      :+:    :+:   */
+/*   ft_isdigit_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/26 15:46:53 by ccommiss          #+#    #+#             */
-/*   Updated: 2021/06/18 11:46:33 by ccommiss         ###   ########.fr       */
+/*   Created: 2021/06/18 11:37:55 by ccommiss          #+#    #+#             */
+/*   Updated: 2021/06/18 11:47:34 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_ftoa(float n, int afterpoint)
+int		ft_isdigit_str(char *str)
 {
-	int		ipart;
-	float	fpart;
-	char	*res;
-	char	*res2;
-	char	*tmp;
+	int	i;
 
-	ipart = (int)n;
-	fpart = n - (float)ipart;
-	res = ft_itoa(ipart);
-	res2 = NULL;
-	if (afterpoint != 0)
+	i = 0;
+	while (str[i] != 0)
 	{
-		tmp = res;
-		res = ft_strjoin(res, ".");
-		free(tmp);
-		fpart = fpart * pow(10, afterpoint);
-		res2 = ft_itoa((int)fpart);
+		if ((!ft_isdigit(str[i]) && str[i] != '-') 
+			|| (i != 0 && str[i] == '-'))
+			return (0);
+		i++;
 	}
-	free(res);
-	free(res2);
-	return (ft_strjoin(res, res2));
+	return (1);
 }

@@ -6,7 +6,7 @@
 #    By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/16 15:08:11 by ccommiss          #+#    #+#              #
-#    Updated: 2021/03/17 18:06:29 by ccommiss         ###   ########.fr        #
+#    Updated: 2021/06/18 15:25:44 by ccommiss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,11 @@ CUSTOM = ft_putstr.c \
 	ft_utoa.c \
 	ft_ftoa.c \
 	ft_isempty.c \
-	ft_free_double_tab.c
+	ft_isdigit_str.c \
+	ft_free_double_tab.c \
+	malloc_char_pointer.c \
+	malloc_int_pointer.c
+
 
 BONUS = ft_lstnew.c \
 	ft_lstadd_front.c \

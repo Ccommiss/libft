@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 15:06:14 by ccommiss          #+#    #+#             */
-/*   Updated: 2021/03/17 18:06:01 by ccommiss         ###   ########.fr       */
+/*   Updated: 2021/06/18 15:37:21 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,5 +120,8 @@ int				ft_strequ(char const *s1, char const *s2);
 int				ft_isempty(char *str);
 void			ft_free_double_tab(char **tab);
 int				ft_is_in_str(const char *s, int c);
+int				ft_isdigit_str(char *str);
+int				ft_malloc_int_pointer(int size, int **ptr);
+int				ft_malloc_char_pointer(int size, char **ptr);
 
 #endif
