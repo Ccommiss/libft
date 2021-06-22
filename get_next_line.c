@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:47:33 by ccommiss          #+#    #+#             */
-/*   Updated: 2021/03/26 15:47:34 by ccommiss         ###   ########.fr       */
+/*   Updated: 2021/06/22 12:54:47 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	get_next_line(int fd, char **line)
 {
 	int			size;
 	char		buf[BUFFER_SIZE];
-	static char *stock = NULL;
+	static char	*stock = NULL;
 	int			i;
 
 	i = 0;

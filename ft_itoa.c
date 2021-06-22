@@ -6,13 +6,13 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 18:45:42 by ccommiss          #+#    #+#             */
-/*   Updated: 2021/01/08 17:36:22 by ccommiss         ###   ########.fr       */
+/*   Updated: 2021/06/22 12:53:31 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		size_nbr(int n)
+int	size_nbr(int n)
 {
 	int	size;
 

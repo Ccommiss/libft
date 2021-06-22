@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:47:39 by ccommiss          #+#    #+#             */
-/*   Updated: 2021/03/26 15:47:40 by ccommiss         ###   ########.fr       */
+/*   Updated: 2021/06/22 12:55:50 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_fill_line(char *stock, int i, char *line)
 {
-	int j;
-	int e;
+	int	j;
+	int	e;
 
 	j = 0;
 	e = 0;

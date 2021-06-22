@@ -6,13 +6,13 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 18:48:08 by ccommiss          #+#    #+#             */
-/*   Updated: 2021/01/08 17:36:05 by ccommiss         ###   ########.fr       */
+/*   Updated: 2021/06/22 12:55:38 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_mystrncmp(const char *first, const char *second, size_t length)
+int	ft_mystrncmp(const char *first, const char *second, size_t length)
 {
 	size_t	i;
 

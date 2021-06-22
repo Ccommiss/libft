@@ -6,13 +6,13 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 18:47:22 by ccommiss          #+#    #+#             */
-/*   Updated: 2021/01/08 17:34:30 by ccommiss         ###   ########.fr       */
+/*   Updated: 2021/06/22 12:54:09 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_countarrays(char const *s, char c)
+int	ft_countarrays(char const *s, char c)
 {
 	int	nb_arr;
 	int	i;

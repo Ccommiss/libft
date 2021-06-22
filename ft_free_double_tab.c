@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 15:24:11 by ccommiss          #+#    #+#             */
-/*   Updated: 2021/03/26 15:53:38 by ccommiss         ###   ########.fr       */
+/*   Updated: 2021/06/22 12:52:04 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_free_double_tab(char **tab)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	if (!tab)
