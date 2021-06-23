@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:47:39 by ccommiss          #+#    #+#             */
-/*   Updated: 2021/06/22 12:55:50 by ccommiss         ###   ########.fr       */
+/*   Updated: 2021/06/23 10:44:06 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_fill_line(char *stock, int i, char *line)
 
 	j = 0;
 	e = 0;
-	if (!(line = (char *)malloc(sizeof(char) * i + 1)))
+	if (!ft_malloc_char_pointer(i + 1, &line))
 		return (NULL);
 	while (j < i)
 		line[j++] = stock[e++];
@@ -37,7 +37,7 @@ char	*ft_strconcat(char *s1, char *s2, int size)
 	i = ft_strlen(s1);
 	j = size;
 	tmp = s1;
-	if (!(concat = (char *)malloc(sizeof(char) * (i + size + 1))))
+	if (!ft_malloc_char_pointer(i + size + 1, &concat))
 		return (NULL);
 	if (s1)
 		while (*s1)
@@ -56,7 +56,7 @@ char	*ft_newstock(char **stock, int i)
 	int		j;
 
 	j = 0;
-	if (!(newstock = (char *)malloc(ft_strlen(*stock) - i + 1)))
+	if (!ft_malloc_char_pointer((ft_strlen(*stock) - i + 1), &newstock))
 		return (NULL);
 	while (((*stock + i)[j]) != '\0')
 	{

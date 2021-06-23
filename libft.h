@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 15:06:14 by ccommiss          #+#    #+#             */
-/*   Updated: 2021/06/22 13:48:33 by ccommiss         ###   ########.fr       */
+/*   Updated: 2021/06/23 10:38:06 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,5 +122,6 @@ int				ft_is_in_str(const char *s, int c);
 int				ft_isdigit_str(char *str);
 int				ft_malloc_int_pointer(int size, int **ptr);
 int				ft_malloc_char_pointer(int size, char **ptr);
+int				ft_atoi_check_limits(char *nptr);
 
 #endif

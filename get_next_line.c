@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:47:33 by ccommiss          #+#    #+#             */
-/*   Updated: 2021/06/22 12:54:47 by ccommiss         ###   ########.fr       */
+/*   Updated: 2021/06/23 10:41:11 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int	get_next_line(int fd, char **line)
 	i = 0;
 	if (fd < 0 || line == NULL || BUFFER_SIZE <= 0 || read(fd, buf, 0) < 0)
 		return (-1);
-	while ((((size = read(fd, buf, BUFFER_SIZE)) > 0)) || (stock && stock[i]))
+	size = read(fd, buf, BUFFER_SIZE);
+	while ((size > 0) || (stock && stock[i]))
 	{
 		if (size > 0)
 			stock = ft_strconcat(stock, buf, size);
@@ -36,7 +37,6 @@ int	get_next_line(int fd, char **line)
 		}
 	}
 	*line = ft_fill_line(stock, i, *line);
-	free(stock);
-	stock = NULL;
+	ft_memdel(stock);
 	return (0);
 }
