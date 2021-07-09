@@ -6,7 +6,7 @@
 /*   By: ccommiss <ccommiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:47:33 by ccommiss          #+#    #+#             */
-/*   Updated: 2021/06/23 10:41:11 by ccommiss         ###   ########.fr       */
+/*   Updated: 2021/07/09 13:00:05 by ccommiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ int	get_next_line(int fd, char **line)
 		}
 	}
 	*line = ft_fill_line(stock, i, *line);
-	ft_memdel(stock);
+	ft_memdel((void **)stock);
 	return (0);
 }
